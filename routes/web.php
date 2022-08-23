@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Home do sistema de biblioteca
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Exibir form para cadastrar um novo livro
 Route::get('/livro/novo', function () {
-    return 'Formulário para cadastrar novo livro';
+    return view('livro');
 });
-Route::post('/livro/novo', function () {
-    return 'Cadastrar novo livro no bd';
-});
+// Registrar no banco o novo livro
+Route::post('/livro/novo', [BookController::class, 'create']);
 
 Route::get('/livro/{id}', function ($id) {
     return 'Livro '.$id;
