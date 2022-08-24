@@ -17,7 +17,9 @@
 </head>
 <body>
     @yield('content')
-
+    <div class="main_menu">
+        <button class="home">HOME</button>
+    </div>
     <footer>
         2022 - Biblioteca Aeromot - Todos os direitos reservados
     </footer>
