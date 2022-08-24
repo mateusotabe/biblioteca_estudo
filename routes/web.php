@@ -20,18 +20,13 @@ Route::get('/', function () {
 });
 
 // Exibir form para cadastrar um novo livro
-Route::get('/livro/novo', function () {
-    return view('livro');
-});
+Route::get('/livro/novo', [BookController::class, 'create'])->name('new_book');
 // Registrar no banco o novo livro
-Route::post('/livro/novo', [BookController::class, 'create']);
+Route::post('/livro/novo', [BookController::class, 'store']);
 
-Route::get('/livro/{id}', function ($id) {
-    return 'Livro '.$id;
-});
-Route::post('/livro/{id}', function ($id) {
-    return 'Livro '.$id.' atualizado';
-});
+// Exibir um livro
+Route::get('/livro/{id}', [BookController::class, 'read'])->name('book');
+Route::post('/livro/{id}', [BookController::class, 'update']);
 Route::delete('/livro/{id}', function ($id) {
     return 'Livro '.$id.' excluido';
 });

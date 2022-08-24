@@ -10,25 +10,31 @@
         @csrf
         <div>
             <label for="title">Título</label>
-            <input type="text" name="title" id="title">
+            <input type="text" name="title" id="title" value="{{ old('title') }}">
             @error('title')
                 <span style="color: red">{{ $message  }}</span>
             @enderror
         </div>
         <div>
             <label for="author">Autor</label>
-            <input type="text" name="author" id="author">
+            <input type="text" name="author" id="author" value="{{ old('author') }}">
             @error('author')
                 <span style="color: red">{{ $message  }}</span>
             @enderror
         </div>
         <div>
             <label for="cat">Categoria</label>
-            <input type="text" name="cat" id="cat">
+            <input type="text" name="cat" id="cat"  value="{{ old('cat') }}">
+            @error('cat')
+                <span style="color: red">{{ $message  }}</span>
+            @enderror
         </div>
         <div>
             <label for="year">Lançamento</label>
-            <input type="date" name="year" id="year">
+            <input type="date" name="year" id="year"  value="{{ old('year') }}">
+            @error('year')
+                <span style="color: red">{{ $message  }}</span>
+            @enderror
         </div>
         <div>
             <button>Salvar</button>
