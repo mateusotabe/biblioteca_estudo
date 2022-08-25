@@ -30,3 +30,7 @@ Route::post('/livro/{id}', [BookController::class, 'update']);
 Route::delete('/livro/{id}', function ($id) {
     return 'Livro '.$id.' excluido';
 });
+
+// Exibir varios livros
+
+
