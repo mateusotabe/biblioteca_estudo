@@ -1,0 +1,35 @@
+* {
+    font-family: Roboto;
+}
+
+.main_menu{
+    margin: 20;
+    padding: 20;
+    text-align: center;
+}
+
+.footer{
+    padding: 10%;
+    margin: 10%;
+}
+
+h1{
+    background-color: rgba(69, 67, 71, 0.418);
+    position: center;
+    size: 100%;
+    text-align: center;
+    
+}
+
+.form-create{
+    text-align: center;
+    padding: 2%;
+    margin: 2%;
+    /* position: center; */
+}
+
+.form-read{
+    text-align: center;
+    padding: 2%;
+    margin: 2%;
+}

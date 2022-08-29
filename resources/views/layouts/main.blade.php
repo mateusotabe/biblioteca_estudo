@@ -14,21 +14,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     
     <!-- CSS -->
-    <link href="public/css/style.css" rel="stylesheet">
+    <!-- <link href="public/css/style.css" rel="stylesheet"> -->
+    <link  rel="stylesheet" href="/css/styles.css"> 
     
 
 </head>
-<body>
+<body class="m-3">
     
     @yield('content')
     @csrf
-    <div class="main_menu">
-        <button class="home"><a href="/">Home</a></button>
-        <button class="book_add"><a href="/livro/novo">Adicionar Livro</a></button>
-        <button class="book_find">Exibir Livro</button>
-        
+    <div class="main_menu mt-3">
+        <button class="home btn btn-dark"><a href="/">Home</a></button>
+        <button class="book_add btn btn-dark"><a href="/livro/novo">Adicionar Livro</a></button>
+        <button class="book_find btn btn-dark">Exibir Livro</button>
     </div>
-    <footer>
+    <footer class="footer">
         2022 - Biblioteca Aeromot - Todos os direitos reservados
     </footer>
 </body>
