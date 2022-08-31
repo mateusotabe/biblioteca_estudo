@@ -25,7 +25,7 @@
     @csrf
     <div class="main_menu mt-3">
         <a href="/" class="home btn btn-dark">Home</a>
-        <a href="/livro/novo" class="book_add btn btn-dark">Adicionar Livro</a>
+        <a href="{{ route('new_book') }}" class="book_add btn btn-dark">Adicionar Livro</a>
         <a href="{{ route('index_book') }}" class="book_find btn btn-dark">Exibir Livros</a>
     </div>
     <footer class="footer">
