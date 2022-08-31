@@ -10,7 +10,8 @@
         <input type="hidden" name="id" value="{{ $book->id }}">
         <div>
             <label for="title" class="m-1">Título</label>
-            <input type="text" name="title" id="title" value="{{ old('title') ? old('title') : $book->title }}">
+            {{-- MONTAR A LÓGICA DE VALIDAÇÃO, DEVOLVENDO O VALOR --}}
+            <input type="text" name="title" id="title" value="{{ old('title') ?? $book->title }}">
             @error('title')
             <span style="color: red">{{ $message  }}</span>
             @enderror
@@ -45,5 +46,11 @@
                 <span style="color: green">{{ session()->get('success') }}</span>
             @endif
         </div>
+    </form>
+    <form action="{{  route('delete_book', $book->id) }}" method="POST">
+        @csrf
+        @method('delete')
+
+        <button class="btn btn-danger">Excluir</button>
     </form>
 @endsection

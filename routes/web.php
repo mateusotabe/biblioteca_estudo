@@ -26,11 +26,13 @@ Route::post('/livro/novo', [BookController::class, 'store']);
 
 // Exibir um livro
 Route::get('/livro/{id}', [BookController::class, 'read'])->name('book');
+// Atualizar livro
 Route::post('/livro/{id}', [BookController::class, 'update']);
-Route::delete('/livro/{id}', function ($id) {
-    return 'Livro '.$id.' excluido';
-});
+// Verificar excluir livro
+Route::get('/livro/excluir/{id}', [BookController::class, 'checkDelete'])->name('check_delete_book');
+// Excluir livro
+Route::delete('/livro/{id}', [BookController::class, 'delete'])->name('delete_book');
 
 // Exibir varios livros
-
+Route::get('/livros', [BookController::class, 'index'])->name('index_book');
 

@@ -41,7 +41,7 @@ class BookController extends Controller
 
     public function read($id)
     {
-        $book = Book::find($id);
+        $book = Book::findOrFail($id);
 
         return view('book.read', ['book' => $book]);
     }
@@ -70,5 +70,29 @@ class BookController extends Controller
         $book->save();
 
         return redirect()->route('book', $book->id)->with('success', 'Atualizado com sucesso!');
+    }
+
+    public function checkDelete($id)
+    {
+        session()->flash('check_delete', Book::find($id));
+        return redirect()->route('index_book');
+    }
+
+    public function delete($id, Request $request)
+    {
+        if($request->id) {
+            $id = $request->id;
+        }
+
+        $book = Book::find($id);
+        $book->delete();
+        return redirect()->route('index_book')->with('success', 'Deletado com êxito');
+    }
+
+    public function index()
+    {
+        $books = Book::all();
+
+        return view('books', ['books' => $books]);
     }
 }
