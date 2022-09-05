@@ -89,9 +89,10 @@ class BookController extends Controller
         return redirect()->route('index_book')->with('success', 'Deletado com êxito');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::all();
+
+        $books = Book::where('title', 'like', '%'.$request->filters_title.'%')->get();
 
         return view('books', ['books' => $books]);
     }

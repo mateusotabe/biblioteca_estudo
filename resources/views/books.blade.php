@@ -21,6 +21,18 @@
                     <a href="{{ route('index_book') }}" class="btn btn-sm btn-outline-primary">Cancelar</a>
                 </form>
             @endif
+            <form method="GET">
+                <div class="row">
+                    <div class="col-10">
+                        <small for="filters.title">Título</small>
+                        <input type="text" name="filters.title">
+                    </div>
+
+                    <div class="col-2">
+                        <button>Filtrar</button>
+                    </div>
+                </div>
+            </form>
 
             <table class="table">
                 <thead>
