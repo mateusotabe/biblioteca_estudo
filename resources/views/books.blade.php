@@ -21,19 +21,33 @@
                     <a href="{{ route('index_book') }}" class="btn btn-sm btn-outline-primary">Cancelar</a>
                 </form>
             @endif
+            <!-- botões de filtros de pesquisa -->
             <form method="GET">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-sm-3 border border-primary">
                         <small for="filters.title">Título</small>
                         <input type="text" name="filters.title">
                     </div>
+                    <div class="col-sm-3 border border-primary">
+                        <small for="filters.title">Autor</small>
+                        <input type="text" name="filters.title">
+                    </div>
+                    <div class="col-sm-3 border border-primary">
+                        <small for="filters.title">Genero</small>
+                        <input type="text" name="filters.title">
+                    </div>
 
-                    <div class="col-2">
+                    <div class="col-sm-3 border border-primary">
+                        <small for="filters.title">Data</small>
+                        <input type="text" name="filters.title">
+                    </div>
+
+                    <div class="col-sm-1 border border-primary">
                         <button>Filtrar</button>
                     </div>
                 </div>
             </form>
-
+            <!-- tabela de exibir livros -->
             <table class="table">
                 <thead>
                     <tr>
@@ -61,6 +75,11 @@
                     @endforeach
                 </tbody>
             </table>
+            <!-- Div dos botões de paginação -->
+            <div class="py-4 w-25 p-3" id="next-page">
+                {{$books->links()}}
+            </div>
+        
         </div>
     </div>
 

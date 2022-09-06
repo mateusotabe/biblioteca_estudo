@@ -91,9 +91,10 @@ class BookController extends Controller
 
     public function index(Request $request)
     {
-
-        $books = Book::where('title', 'like', '%'.$request->filters_title.'%')->get();
-
+        
+        //$books = Book::all()->paginate(10);
+        $books = Book::where('title', 'like', '%'.$request->filters_title.'%')->paginate(10);
+        
         return view('books', ['books' => $books]);
     }
 }
