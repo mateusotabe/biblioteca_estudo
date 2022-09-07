@@ -47,10 +47,23 @@
             @endif
         </div>
     </form>
-    <form action="{{  route('delete_book', $book->id) }}" method="POST">
+    
+    <form action="{{  route('delete_book', $book->id) }}" method="POST">  
         @csrf
-        @method('delete')
-
-        <button class="btn btn-danger">Excluir</button>
+        <!-- @method('delete') -->
+        <div class="justify-content-center">
+            <button href="{{ route('check_delete_book', $book->id) }}" class="btn btn-danger">Excluir</button>
+        </div>
+        <!-- <button class="btn btn-danger">Excluir</button> -->
     </form>
+    @if(session()->exists('check_delete'))
+        <form method="POST" action="{{ route('delete_book', session()->get('check_delete')->id) }}">
+            @csrf
+            @method('delete')
+            <p>Deseja excluir o livro <b>{{ session()->get('check_delete')->title }}</b></p>
+            <button class="btn btn-sm btn-danger">Excluir</button>
+            <a href="{{ route('index_book') }}" class="btn btn-sm btn-outline-primary">Cancelar</a>
+        </form>
+    @endif
+    
 @endsection

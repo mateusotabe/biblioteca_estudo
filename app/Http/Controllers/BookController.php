@@ -71,7 +71,7 @@ class BookController extends Controller
 
         return redirect()->route('book', $book->id)->with('success', 'Atualizado com sucesso!');
     }
-
+    // metodo confirmação de delete
     public function checkDelete($id)
     {
         session()->flash('check_delete', Book::find($id));
@@ -90,9 +90,26 @@ class BookController extends Controller
     }
 
     public function index(Request $request)
-    {
+    {   
         
-        //$books = Book::all()->paginate(10);
+        // Esquemática de filtro - verificar por que só funciona title e por que ele quebra se vem da home
+        
+        // if ($request->has('filters_title') != null){
+        //     $books = Book::where('title', 'like', '%'.$request->filters_title.'%')->paginate(10);
+        // }
+        // else if ($request->has('filters_author') != null){
+        //     $books = Book::where('author', 'like', '%'.$request->filters_author.'%')->paginate(10);
+        // }
+        // else if ($request->has('filters_cat')){
+        //     $books = Book::where('cat', 'like', '%'.$request->filters_cat.'%')->paginate(10);
+        // }
+        // else if ($request->has('filters_year')){
+        //     $books = Book::where('year', 'like', '%'.$request->filters_year.'%')->paginate(10);
+        // }
+        // else {
+        //     $books = Book::all()->paginate(10);
+        // }
+
         $books = Book::where('title', 'like', '%'.$request->filters_title.'%')->paginate(10);
         
         return view('books', ['books' => $books]);

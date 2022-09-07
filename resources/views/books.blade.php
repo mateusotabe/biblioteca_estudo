@@ -3,7 +3,7 @@
 @section('title', 'Livros')
 
 @section('content')
-
+<link  rel="stylesheet" href="/css/styles.css">
     <div class="jumbotron">
         <div class="container">
             <h2 class="h2">Lista dos Livros</h2>
@@ -23,32 +23,32 @@
             @endif
             <!-- botões de filtros de pesquisa -->
             <form method="GET">
-                <div class="row">
-                    <div class="col-sm-3 border border-primary">
+                <div class="row p-2">
+                    <div class="col-sm-3 p-1">
                         <small for="filters.title">Título</small>
                         <input type="text" name="filters.title">
                     </div>
-                    <div class="col-sm-3 border border-primary">
+                    <div class="col-sm-3 p-1">
                         <small for="filters.title">Autor</small>
-                        <input type="text" name="filters.title">
+                        <input type="text" name="filters.author">
                     </div>
-                    <div class="col-sm-3 border border-primary">
+                    <div class="col-sm-3 p-1">
                         <small for="filters.title">Genero</small>
-                        <input type="text" name="filters.title">
+                        <input type="text" name="filters.cat">
                     </div>
 
-                    <div class="col-sm-3 border border-primary">
+                    <div class="col-sm-3 p-1">
                         <small for="filters.title">Data</small>
-                        <input type="text" name="filters.title">
+                        <input type="text" name="filters.yeart">
                     </div>
 
-                    <div class="col-sm-1 border border-primary">
-                        <button>Filtrar</button>
+                    <div class="col-sm-1 p-1">
+                        <button class="btn btn-dark">Filtrar</button>
                     </div>
                 </div>
             </form>
             <!-- tabela de exibir livros -->
-            <table class="table">
+            <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -66,8 +66,8 @@
                             <td><a href="{{ route('book', $book->id) }}">{{ $book->title }}</a></td>
                             <td>{{ $book->author }}</td>
                             <td>{{ $book->cat }}</td>
-                            {{-- Formatar a data d/m/a --}}
-                            <td>{{ $book->year }}</td>
+                            <!-- <td>{{ $book->year }}</td> -->
+                            <td>{{\Carbon\Carbon::parse($book->year)->format('d/m/Y')}}</td>
                             <td>
                                 <a href="{{ route('check_delete_book', $book->id) }}" class="text-danger">Excluir</a>
                             </td>
@@ -76,7 +76,8 @@
                 </tbody>
             </table>
             <!-- Div dos botões de paginação -->
-            <div class="py-4 w-25 p-3" id="next-page">
+            <!-- <div class="py-4 w-25 p-5" id="next-page"> -->
+            <div class="py-1 p-5" id="paginate">
                 {{$books->links()}}
             </div>
         

@@ -19,7 +19,7 @@
 
 
 </head>
-<body class="m-3">
+<body class="m-3" id="body">
 
     @yield('content')
     @csrf
