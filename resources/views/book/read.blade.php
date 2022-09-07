@@ -47,7 +47,7 @@
             @endif
         </div>
     </form>
-    
+    ""
     <form action="{{  route('delete_book', $book->id) }}" method="POST">  
         @csrf
         <!-- @method('delete') -->
