@@ -47,12 +47,12 @@
             @endif
         </div>
     </form>
-    ""
+
     <form action="{{  route('delete_book', $book->id) }}" method="POST">  
         @csrf
         <!-- @method('delete') -->
-        <div class="justify-content-center">
-            <button href="{{ route('check_delete_book', $book->id) }}" class="btn btn-danger">Excluir</button>
+        <div class="d-flex justify-content-center">
+            <a href="{{ route('check_delete_book', $book->id) }}" class="btn btn-danger">Excluir</a>
         </div>
         <!-- <button class="btn btn-danger">Excluir</button> -->
     </form>

@@ -76,6 +76,7 @@ class BookController extends Controller
     {
         session()->flash('check_delete', Book::find($id));
         return redirect()->route('index_book');
+        
     }
 
     public function delete($id, Request $request)
@@ -110,7 +111,10 @@ class BookController extends Controller
         //     $books = Book::all()->paginate(10);
         // }
 
-        $books = Book::where('title', 'like', '%'.$request->filters_title.'%')->paginate(10);
+        $books = Book::where('title', 'like', '%'.$request->filters_title.'%')->
+        where('author', 'like', '%'.$request->filters_author.'%')->
+        where('cat', 'like', '%'.$request->filters_cat.'%')->
+        where('year', 'like', '%'.$request->filters_year.'%')->paginate(10);
         
         return view('books', ['books' => $books]);
     }
