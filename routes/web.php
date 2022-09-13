@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/user', function () {
+    return view('user');
+});
+
+
 // Exibir form para cadastrar um novo livro
 Route::get('/livro/novo', [BookController::class, 'create'])->name('new_book');
 // Registrar no banco o novo livro

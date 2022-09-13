@@ -118,4 +118,5 @@ class BookController extends Controller
         
         return view('books', ['books' => $books]);
     }
+
 }

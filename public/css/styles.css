@@ -43,13 +43,25 @@ h2{
     margin: 2%;
 }
 
-#paginate{
+#paginate svg{
+    width: 35px;
+    height: 25px;
+}
 
-    width: 25%;
-    height: 50%;
-    margin: 2%;
+#paginate a{
+    text-decoration: none;
+}
+
+#paginate a:hover{
+    color: red;
 }
 
 #body{
     background-color: rgba(210, 210, 210, 0.700);
+}
+
+
+#hg{
+    text-decoration-color: rgba(71, 205, 176, 0.967);
+
 }

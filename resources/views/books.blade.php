@@ -39,7 +39,7 @@
 
                     <div class="col-sm-3 p-1">
                         <small for="filters.title">Data</small>
-                        <input type="text" name="filters.yeart">
+                        <input type="text" name="filters.year">
                     </div>
 
                     <div class="col-sm-1 p-1">
@@ -80,7 +80,6 @@
             <div class="py-1 p-5" id="paginate">
                 {{$books->links()}}
             </div>
-        
         </div>
     </div>
 
