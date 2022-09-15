@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,15 @@ Route::delete('/livro/{id}', [BookController::class, 'delete'])->name('delete_bo
 // Exibir varios livros
 Route::get('/livros', [BookController::class, 'index'])->name('index_book');
 
+// Criar novos usuários
+Route::get('/user', [UserController::class, 'create'])->name('new_user');
+// livewire
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

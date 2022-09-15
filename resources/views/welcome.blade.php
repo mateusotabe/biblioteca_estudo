@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'AeroLib')
+@section('title', 'AeroLibrary')
 
 @section('content')
 

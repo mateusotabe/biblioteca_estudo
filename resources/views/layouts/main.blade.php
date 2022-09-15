@@ -28,7 +28,7 @@
         <a href="{{ route('new_book') }}" class="book_add btn btn-dark">Adicionar Livro</a>
         <a href="{{ route('index_book') }}" class="book_find btn btn-dark">Exibir Livros</a>
 
-        <a href="/user" class="book_find btn btn-dark">User</a>
+        <a href="/user" class="book_find btn btn-dark">Cadastro de Usuário</a>
 
     </div>
     <footer class="footer">
