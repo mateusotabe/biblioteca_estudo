@@ -15,4 +15,21 @@ class UserController extends Controller
     {
         return view(('dashboard'));
     }
+
+    public function login()
+    {
+        return view('auth.login');
+    }
+
+    public function register()
+    {
+        return view('auth.register');
+    }
+
+    // Verificar se isso é relamente necessário
+    // Redireciona para login caso o name user for null, corrigir o erro de logar no / sem estar logado
+    public function redirect_login()
+    {
+        return redirect('auth.login');
+    }
 }

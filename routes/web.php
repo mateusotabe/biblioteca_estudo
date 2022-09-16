@@ -26,6 +26,9 @@ Route::get('/user', function () {
     return view('user');
 });
 
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/register', [UserController::class, 'register'])->name('register');
+
 
 // Exibir form para cadastrar um novo livro
 Route::get('/livro/novo', [BookController::class, 'create'])->name('new_book');
@@ -48,6 +51,8 @@ Route::get('/livros', [BookController::class, 'index'])->name('index_book');
 
 // Criar novos usuários
 Route::get('/user', [UserController::class, 'create'])->name('new_user');
+
+
 
 // livewire
 Route::middleware([

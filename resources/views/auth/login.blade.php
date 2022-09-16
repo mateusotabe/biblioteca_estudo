@@ -43,6 +43,9 @@
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>
+            <div>
+                <a href="/register">Registrar-se</a>
+            </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
