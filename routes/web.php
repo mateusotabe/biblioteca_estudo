@@ -16,9 +16,11 @@ use App\Http\Controllers\UserController;
 */
 
 // Home do sistema de biblioteca
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [UserController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/user', function () {
     return view('user');
@@ -32,8 +34,10 @@ Route::post('/livro/novo', [BookController::class, 'store']);
 
 // Exibir um livro
 Route::get('/livro/{id}', [BookController::class, 'read'])->name('book');
+
 // Atualizar livro
 Route::post('/livro/{id}', [BookController::class, 'update']);
+
 // Verificar excluir livro
 Route::get('/livro/excluir/{id}', [BookController::class, 'checkDelete'])->name('check_delete_book');
 // Excluir livro
@@ -44,13 +48,13 @@ Route::get('/livros', [BookController::class, 'index'])->name('index_book');
 
 // Criar novos usuários
 Route::get('/user', [UserController::class, 'create'])->name('new_user');
+
 // livewire
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [UserController::class,'dashboard'])->name('dashboard');
 });
+
