@@ -5,7 +5,7 @@ php artisan key:generate
 php artisan migrate:<status, rollback entre outros ou sozinho>
 php artisan make:model <pode ser model, migrate, controller> 
 
-php artisan db:seed --classe={nome da classe em seeders}
+php artisan db:seed --class={nome da classe em seeders}
 
 
 Para funcionar o livewire precisa de

@@ -28,8 +28,10 @@
         <a href="{{ route('new_book') }}" class="book_add btn btn-dark">Adicionar Livro</a>
         <a href="{{ route('index_book') }}" class="book_find btn btn-dark">Exibir Livros</a>
 
-        <a href="/user" class="book_find btn btn-dark">Cadastro de Usuário</a>
-
+        @guest
+        <a href="/register" class="book_find btn btn-dark">Registrar-se</a>
+        <a href="/login" class="book_find btn btn-dark">Logar</a>
+        @endguest
     </div>
     <footer class="footer">
         2022 - Biblioteca Aeromot - Todos os direitos reservados

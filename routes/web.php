@@ -26,6 +26,7 @@ Route::get('/user', function () {
     return view('user');
 });
 
+// Rotas para o livewire
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
