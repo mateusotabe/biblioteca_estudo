@@ -119,4 +119,17 @@ class BookController extends Controller
         return view('books', ['books' => $books]);
     }
 
+
+    // Metodo de validação para verificar se item já cadastrado
+
+    // public function validate(Request $request, array $rules, array $messages = [], array $customAttributes = [])
+    // {
+    //     //
+    // }
+
+    public function validateBook(Request $request)
+    {
+        //
+    }
+
 }

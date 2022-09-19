@@ -25,9 +25,19 @@
     @csrf
     <div class="main_menu mt-3">
         <a href="/" class="home btn btn-dark">Home</a>
+        @auth
         <a href="{{ route('new_book') }}" class="book_add btn btn-dark">Adicionar Livro</a>
-        <a href="{{ route('index_book') }}" class="book_find btn btn-dark">Exibir Livros</a>
+        <a href="{{ route('dashboard') }}" class="book_add btn btn-dark">Dashboard</a>
 
+        <form action="/logout" method="POST">
+            @csrf 
+            <a href="/logout" class="nav-link" onclick="book.preventDefault(); this.closet('form').submit();">Sair</a>
+        </form>
+        
+
+        @endauth
+        <a href="{{ route('index_book') }}" class="book_find btn btn-dark">Exibir Livros</a>
+        
         @guest
         <a href="/register" class="book_find btn btn-dark">Registrar-se</a>
         <a href="/login" class="book_find btn btn-dark">Logar</a>
