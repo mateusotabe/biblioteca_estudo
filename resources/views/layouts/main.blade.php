@@ -29,10 +29,10 @@
         <a href="{{ route('new_book') }}" class="book_add btn btn-dark">Adicionar Livro</a>
         <a href="{{ route('dashboard') }}" class="book_add btn btn-dark">Dashboard</a>
 
-        <form action="/logout" method="POST">
+        <!-- <form action="/logout" method="POST">
             @csrf 
             <a href="/logout" class="nav-link" onclick="book.preventDefault(); this.closet('form').submit();">Sair</a>
-        </form>
+        </form> -->
         
 
         @endauth
