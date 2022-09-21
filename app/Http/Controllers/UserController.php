@@ -32,4 +32,10 @@ class UserController extends Controller
     {
         return redirect('auth.login');
     }
+
+    // Home
+    public function home()
+    {
+        return view('welcome');
+    }
 }

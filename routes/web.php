@@ -20,7 +20,7 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::get('/', [UserController::class, 'dashboard'])->name('dashboard');
+Route::get('/', [UserController::class, 'home'])->name('home');
 
 Route::get('/user', function () {
     return view('user');
