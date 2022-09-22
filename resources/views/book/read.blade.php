@@ -47,7 +47,7 @@
             @endif
         </div>
     </form>
-
+    @auth
     <form action="{{  route('delete_book', $book->id) }}" method="POST">  
         @csrf
         <!-- @method('delete') -->
@@ -65,5 +65,5 @@
             <a href="{{ route('index_book') }}" class="btn btn-sm btn-outline-primary">Cancelar</a>
         </form>
     @endif
-    
+    @endauth
 @endsection

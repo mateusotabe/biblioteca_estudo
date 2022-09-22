@@ -68,9 +68,11 @@
                             <td>{{ $book->cat }}</td>
                             <!-- <td>{{ $book->year }}</td> -->
                             <td>{{\Carbon\Carbon::parse($book->year)->format('d/m/Y')}}</td>
+                            @auth
                             <td>
                                 <a href="{{ route('check_delete_book', $book->id) }}" class="text-danger">Excluir</a>
                             </td>
+                            @endauth
                         </tr>
                     @endforeach
                 </tbody>
